@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chef-crontab
-# Recipe:: default
+# Recipe:: delete
 #
 # Copyright (C) 2014 PE, pf.
 #
@@ -22,5 +22,5 @@ node["crontab"].each do |name, description|
   cron name do
     action :delete
   end
-end
+end if node['crontab']
 

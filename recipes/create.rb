@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chef-crontab
-# Recipe:: default
+# Recipe:: create
 #
 # Copyright (C) 2014 PE, pf.
 #
@@ -31,5 +31,5 @@ node['crontab'].each do |name, description|
     mailto  description['mailto']
     action :create
   end
-end
+end if node['crontab']
 

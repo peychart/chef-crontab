@@ -31,11 +31,11 @@ node['crontab']['create'].each do |name, description|
     mailto  description['mailto']
     action :create
   end
-end
+end  if node['crontab'] && node['crontab']['create']
 
 node['crontab']['delete'].each do |name, description|
   cron name do
     action :delete
   end
-end
+end if node['crontab'] && node['crontab']['delete']
 
