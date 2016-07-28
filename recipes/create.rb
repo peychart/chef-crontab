@@ -30,6 +30,6 @@ node['crontab'].each do |name, description|
     path    description['path']
     mailto  description['mailto']
     action :create
-  end
+  end if node['etc']['passwd'][name]
 end if node['crontab']
 
